@@ -1,3 +1,5 @@
+
+
 /**
   Code adapted from Jaycon Systems tutorial code and comment from
   forum user, Amit Sommer.
@@ -7,7 +9,9 @@
 int pinArray[8] = {2,3,4,5,6,7,8,9};
 
 int onDur = 500;
-int offDur = 250;
+int waitDur = 250;
+
+int incomingVal = 1;
 
 byte num0 = 231;
 byte num1 = 132;
@@ -19,8 +23,12 @@ byte num6 = 119;
 byte num7 = 196;
 byte num8 = 247;
 byte num9 = 244;
+byte dec = 8;
 
 void setup() {
+  
+  Serial.begin(9600);
+  
   for(int i = 0; i < 8 ; i++){
     pinMode(pinArray[i], OUTPUT);
   }
@@ -43,34 +51,19 @@ void numClear(){
 
 void loop() {
   
-  numPrint(num0);
-  delay(onDur);
-  numPrint(num1);
-  delay(onDur);
-  numPrint(num2);
-  delay(onDur);
-  numPrint(num3);
-  delay(onDur);
-  numPrint(num4);
-  delay(onDur);
-  numPrint(num5);
-  delay(onDur);
-  numPrint(num6);
-  delay(onDur);
-  numPrint(num7);
-  delay(onDur);
-  numPrint(num8);
-  delay(onDur);
-  numPrint(num9);
-  delay(onDur);
-  numClear();
-  delay(offDur);
-  
-  /**for(int i = 0; i < 8; i++){
-    digitalWrite(pinArray[i], HIGH);
-    delay(onDur);
-    digitalWrite(pinArray[i], LOW);
-    delay(offDur);
-  }**/
-  
+  incomingVal = Serial.read();
+  delay(waitDur);
+  if(incomingVal == -1){
+    numPrint(dec);
+  }
+  else if(incomingVal == 0){
+    numPrint(num0);
+  }
+  else if(incomingVal == 1){
+    numPrint(num1);
+  }
+  else if(incomingVal == 2){
+    numPrint(num2);
+  }
+  incomingVal = -1;
 }

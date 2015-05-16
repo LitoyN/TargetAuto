@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/_ext/1107296622/Serial.o \
 	${OBJECTDIR}/main.o
 
 
@@ -62,10 +63,15 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/targetauto.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/targetauto ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/_ext/1107296622/Serial.o: /C/Users/elliot/Documents/GitHub/TargetAuto/Serial.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1107296622
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I/C/OpenCV/opencv/build/include -I/C/OpenCV/opencv/build/include/opencv -I/C/Users/elliot/Documents/GitHub/TargetAuto -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1107296622/Serial.o /C/Users/elliot/Documents/GitHub/TargetAuto/Serial.cpp
+
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -I/C/OpenCV/opencv/build/include -I/C/OpenCV/opencv/build/include/opencv -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -O2 -I/C/OpenCV/opencv/build/include -I/C/OpenCV/opencv/build/include/opencv -I/C/Users/elliot/Documents/GitHub/TargetAuto -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:

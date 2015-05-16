@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>C:/Users/elliot/Documents/GitHub/TargetAuto/SerialClass.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -12,6 +13,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>C:/Users/elliot/Documents/GitHub/TargetAuto/Serial.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -36,14 +38,17 @@
       </toolsSet>
       <compileType>
         <ccTool>
+          <standard>8</standard>
           <incDir>
             <pElem>C:/OpenCV/opencv/build/include</pElem>
             <pElem>C:/OpenCV/opencv/build/include/opencv</pElem>
+            <pElem>C:/Users/elliot/Documents/GitHub/TargetAuto</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
           <linkerAddLib>
             <pElem>C:/OpenCV/opencv/release/lib</pElem>
+            <pElem> C:/Users/elliot/Google Drive/Target</pElem>
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibLibItem>opencv_calib3d249.dll</linkerLibLibItem>
@@ -118,6 +123,16 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="C:/Users/elliot/Documents/GitHub/TargetAuto/Serial.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="C:/Users/elliot/Documents/GitHub/TargetAuto/SerialClass.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -136,6 +151,7 @@
           <incDir>
             <pElem>C:/OpenCV/opencv/build/include</pElem>
             <pElem>C:/OpenCV/opencv/build/include/opencv</pElem>
+            <pElem>C:/Users/elliot/Documents/GitHub/TargetAuto</pElem>
           </incDir>
         </ccTool>
         <fortranCompilerTool>
@@ -221,6 +237,16 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="C:/Users/elliot/Documents/GitHub/TargetAuto/Serial.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="C:/Users/elliot/Documents/GitHub/TargetAuto/SerialClass.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
