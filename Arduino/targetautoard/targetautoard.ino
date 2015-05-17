@@ -51,19 +51,20 @@ void numClear(){
 
 void loop() {
   
-  incomingVal = Serial.read();
-  delay(waitDur);
-  if(incomingVal == -1){
-    numPrint(dec);
+  if(Serial){
+    incomingVal = Serial.read();
+    delay(waitDur);
+    if(incomingVal == -1){
+      numPrint(dec);
+    }
+    if(incomingVal == 0){
+      numPrint(num0);
+    }
+    if(incomingVal == 1){
+      numPrint(num1);
+    }
+    if(incomingVal == 2){
+      numPrint(num2);
+    }
   }
-  else if(incomingVal == 0){
-    numPrint(num0);
-  }
-  else if(incomingVal == 1){
-    numPrint(num1);
-  }
-  else if(incomingVal == 2){
-    numPrint(num2);
-  }
-  incomingVal = -1;
 }
