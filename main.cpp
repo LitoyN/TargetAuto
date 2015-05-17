@@ -18,7 +18,16 @@ using namespace std;
 int main(int argc, char** argv) {
 
     Serial* comm = new Serial("COM3");
-    char incomingData[5] = {0, 1, 2, 3, 4};
+    char *zero;
+    char *one;
+    char *two;
+    
+    char incomingData[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    
+    zero = &incomingData[0];
+    one = &incomingData[1];
+    two = &incomingData[2];
+    
     
     int num0 = 0;
     int num1 = 1;
@@ -26,12 +35,17 @@ int main(int argc, char** argv) {
     int num3 = 3;
     
     while(comm->IsConnected()){
-        comm->WriteData(incomingData, 3);
-        Sleep(250);
-        comm->WriteData(incomingData, 3);
-        Sleep(250);
-        comm->WriteData(incomingData, 3);
+        comm->WriteData(zero, 1);
+        Sleep(1000);
+        comm->WriteData(one, 1);
+        Sleep(1000);
+        comm->WriteData(two, 1);
+        Sleep(1000);
+        comm->WriteData(one, 1);
+        Sleep(1000);
+        comm->WriteData(zero, 1);
         Sleep(1500);
+
     }
     
     return 0;

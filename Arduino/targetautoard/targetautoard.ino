@@ -9,7 +9,6 @@
 int pinArray[8] = {2,3,4,5,6,7,8,9};
 
 int onDur = 500;
-int waitDur = 250;
 
 int incomingVal = 1;
 
@@ -53,7 +52,7 @@ void loop() {
   
   if(Serial){
     incomingVal = Serial.read();
-    delay(waitDur);
+    delay(onDur);
     if(incomingVal == -1){
       numPrint(dec);
     }
