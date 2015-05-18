@@ -6,6 +6,7 @@
  */
 
 #include <cstdlib>
+#include <iostream>
 #include "SerialClass.h"
 
 using namespace std;
@@ -22,12 +23,14 @@ int main(int argc, char** argv) {
     char *one;
     char *two;
     
-    char incomingData[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    char data[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     
-    zero = &incomingData[0];
-    one = &incomingData[1];
-    two = &incomingData[2];
+    zero = &data[0];
+    one = &data[1];
+    two = &data[2];
     
+    int value;
+    char* charVal;
     
     int num0 = 0;
     int num1 = 1;
@@ -35,16 +38,12 @@ int main(int argc, char** argv) {
     int num3 = 3;
     
     while(comm->IsConnected()){
-        comm->WriteData(zero, 1);
-        Sleep(1000);
-        comm->WriteData(one, 1);
-        Sleep(1000);
-        comm->WriteData(two, 1);
-        Sleep(1000);
-        comm->WriteData(one, 1);
-        Sleep(1000);
-        comm->WriteData(zero, 1);
-        Sleep(1500);
+        
+        for(int i = 0; i < 10; i++){
+            //charVal = &data[i];
+            comm->WriteData(&data[i], 1);
+            Sleep(500);
+        }
 
     }
     

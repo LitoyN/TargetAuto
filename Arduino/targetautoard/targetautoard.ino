@@ -1,4 +1,4 @@
-
+#include <Servo.h>
 
 /**
   Code adapted from Jaycon Systems tutorial code and comment from
@@ -7,26 +7,23 @@
   5/14/2015
 **/
 int pinArray[8] = {2,3,4,5,6,7,8,9};
-
-int onDur = 500;
-
+int servo1Pin = 11;
+int onDur = 1500;
 int incomingVal = 1;
-
-byte num0 = 231;
-byte num1 = 132;
-byte num2 = 211;
-byte num3 = 214;
-byte num4 = 180;
-byte num5 = 118;
-byte num6 = 119;
-byte num7 = 196;
-byte num8 = 247;
-byte num9 = 244;
+int servoPos;
+byte numVals[10] = {231, 132, 211, 214, 180, 118, 119, 196, 247, 244};
 byte dec = 8;
+Servo servo1;
 
 void setup() {
   
   Serial.begin(9600);
+  
+  servo1.attach(servo1Pin);
+  
+  servo1.write(0);
+  delay(2000);
+  servo1.write(155);
   
   for(int i = 0; i < 8 ; i++){
     pinMode(pinArray[i], OUTPUT);
@@ -52,18 +49,17 @@ void loop() {
   
   if(Serial){
     incomingVal = Serial.read();
-    delay(onDur);
+    servoPos = 12 * incomingVal;
+    
+    
     if(incomingVal == -1){
       numPrint(dec);
+      servo1.write(0);
     }
-    if(incomingVal == 0){
-      numPrint(num0);
+    else{
+      numPrint(numVals[incomingVal]);
+      servo1.write(servoPos);
     }
-    if(incomingVal == 1){
-      numPrint(num1);
-    }
-    if(incomingVal == 2){
-      numPrint(num2);
-    }
+    delay(onDur);
   }
 }
